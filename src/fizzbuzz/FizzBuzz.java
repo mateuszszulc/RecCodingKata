@@ -13,9 +13,13 @@ public class FizzBuzz {
     private static String createFizzBuzzStringFromInteger(int i) {
         StringBuilder valueToDisplay = new StringBuilder();
         if (i == 0) return "0" ;
-        valueToDisplay.append(((i % 3) == 0) ? "Fizz" : "" );
-        valueToDisplay.append(((i % 5) == 0) ? "Buzz" : "" );
+        valueToDisplay.append(createConcreteStringFromInt(i, 3, "Fizz"));
+        valueToDisplay.append(createConcreteStringFromInt(i, 5, "Buzz") );
         return valueToDisplay.toString();
+    }
+
+    private static String createConcreteStringFromInt(int number, int divisor, String phraseName) {
+        return ((number % divisor ) == 0) ? phraseName: "";
     }
 }
 
